@@ -19,7 +19,7 @@
       List<ClassModel> classModelList = (ArrayList<ClassModel>)request.getAttribute("classList");
     
  	  %>
-      <form name="addnewteacher" action="index.html" method="post">
+      <form name="addnewteacher" action="addnewteacher" method="post">
       
         <h1>Add Teacher</h1>
         
@@ -44,11 +44,11 @@
         <label for="job">Branch</label>
         <select id="job" name="branch">
           <optgroup label="">
-            <option value="cs">Computer science</option>
-            <option value="mths">Maths</option>
-            <option value="eng">English</option>
-            <option value="comm">Commerce</option>
-            <option value="vm">Visual Media</option>
+            <option value="Computer science">Computer science</option>
+            <option value="Maths">Maths</option>
+            <option value="English">English</option>
+            <option value="Commerce">Commerce</option>
+            <option value="Visual Media">Visual Media</option>
         </select>
         </fieldset>
         
@@ -56,18 +56,18 @@
         <label for="job">Subject</label>
         <select id="job" name="subject">
           <optgroup label="">
-            <option value="">Networking</option>
-            <option value="">Cryptography</option>
-            <option value="">Introduction To Media</option>
-            <option value="">C#</option>
-            <option value="">OOAD</option>
+            <option value="Networking">Networking</option>
+            <option value="Cryptography">Cryptography</option>
+            <option value="Introduction To Media">Introduction To Media</option>
+            <option value="C#">C#</option>
+            <option value="OOAD">OOAD</option>
         </select>
         </fieldset>
         
         <fieldset>
         <label for="job">Type</label>
-          <input type="radio" id="" value="" name="coordinator"><label class="light" for="">Co-ordinator</label>&nbsp&nbsp&nbsp
-          <input type="radio" id="" value="" name="coordinator"><label class="light" for="">Teacher</label>
+          <input type="radio" id="" value="Coordinator" name="iscoordinator"><label class="light" for="">Co-ordinator</label>&nbsp&nbsp&nbsp
+          <input type="radio" id="" value="Teacher" name="iscoordinator"><label class="light" for="">Teacher</label>
         </fieldset>
         
         <fieldset>
@@ -80,7 +80,7 @@
     	</select>
         </fieldset>
         
-        <button type="submit">Sign Up</button>
+        <button type="submit" onClick="" >Sign Up</button>
          <button type="submit">Reset</button>
         
       </form>
