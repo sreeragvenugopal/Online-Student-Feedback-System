@@ -80,10 +80,11 @@
     	</select>
         </fieldset>
         
-        <button type="submit" onClick="" >Sign Up</button>
+        <button type="submit" >Create Teacher</button>
          <button type="submit">Reset</button>
         
       </form>
+      <h1><div id="ff" >LLLLLLLLLLLLLL</div></h1>
       
     </body>
 </html>

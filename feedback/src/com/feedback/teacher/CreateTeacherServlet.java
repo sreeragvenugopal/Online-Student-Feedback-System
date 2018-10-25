@@ -1,5 +1,6 @@
 package com.feedback.teacher;
 
+import java.awt.Window;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -9,10 +10,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
 
 import com.feedback.model.ClassModel;
 
@@ -61,12 +65,24 @@ public class CreateTeacherServlet extends HttpServlet {
 		String branch=request.getParameter("branch");
 		String subject=request.getParameter("subject");
 		String type=request.getParameter("iscoordinator");
-		if(type.equals("Coordinator"))
+		if( type != null && type.equals("Coordinator"))
 				{
 					  isCoordinator=true;
 				}
 		
 		String batch=request.getParameter("model");
+		
+		if(username.equals("") || name.equals("") || password.equals("") ||  repassword.equals("")||  branch.equals("") || subject.equals("")  )
+		{
+				
+			request.setAttribute("formfillerror", "Fields Cannot be empty");
+			try {
+				request.getRequestDispatcher("/Login/Addnewteacher.jsp").forward(request, response);
+			} catch (ServletException e) {
+				System.out.println(e.getMessage());
+			}
+		} 
+		
 		
 		try {
 			
@@ -86,6 +102,11 @@ public class CreateTeacherServlet extends HttpServlet {
 			st.executeUpdate();
 			
 			
+			response.sendRedirect("LoginSuccessful.html");
+			return;
+			
+			
+			
 		}
 		catch(Exception e)
 		{
@@ -98,4 +119,6 @@ public class CreateTeacherServlet extends HttpServlet {
 		
 		
 	}
+
+	
 }

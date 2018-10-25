@@ -34,6 +34,19 @@
     <url-pattern>/Login/addnewteacher</url-pattern>
   </servlet-mapping>
   
+  <!-- Add New Teacher -->
+  <servlet>
+    <servlet-name>removeteacher</servlet-name>
+    <servlet-class>com.feedback.teacher.RemoveTeacherServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>removeteacher</servlet-name>
+    <url-pattern>/Login/removeteacher</url-pattern>
+  </servlet-mapping>
+  
+  
+  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
