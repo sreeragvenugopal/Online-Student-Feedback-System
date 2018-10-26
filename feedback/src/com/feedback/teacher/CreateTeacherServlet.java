@@ -72,7 +72,7 @@ public class CreateTeacherServlet extends HttpServlet {
 		
 		String batch=request.getParameter("model");
 		
-		if(username.equals("") || name.equals("") || password.equals("") ||  repassword.equals("")||  branch.equals("") || subject.equals("")  )
+		/*if(username.equals("") || name.equals("") || password.equals("") ||  repassword.equals("")||  branch.equals("") || subject.equals("")  )
 		{
 				
 			request.setAttribute("formfillerror", "Fields Cannot be empty");
@@ -81,7 +81,7 @@ public class CreateTeacherServlet extends HttpServlet {
 			} catch (ServletException e) {
 				System.out.println(e.getMessage());
 			}
-		} 
+		} */
 		
 		
 		try {
