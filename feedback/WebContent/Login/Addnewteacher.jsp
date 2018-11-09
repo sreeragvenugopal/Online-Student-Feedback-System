@@ -14,6 +14,7 @@
         <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="../css/main2.css">
         <script type="text/javascript">
+<<<<<<< HEAD
         
         var username=document.getElementById("uname");
         var name=document.getElementById("name");
@@ -29,6 +30,42 @@
         	 x.style.display = "none";
         	}
         </script>
+=======
+        function validate(){
+        var uname=document.getElementById("uname");
+        var name=document.getElementById("name");
+        var pass=document.getElementById("password");
+        var repass=document.getElementById("repassword");
+        var branch=document.getElementById("branch");
+        var subject=document.getElementById("subject");
+        var type=document.getElementById("type");
+        var batch=document.getElementById("batch");
+        
+        if(username.equals("") || name.equals("") || password.equals("") ||  repassword.equals("")||  branch.equals("") || subject.equals("")  )
+		{
+				
+        	var x = document.getElementById("myDIV");
+        	x.style.display = "block";
+        	return;
+			
+		} 
+        
+        
+        
+        }
+        
+        
+        </script>
+       <style>
+#myDIV {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+    }
+</style>
+>>>>>>> branch 'master' of https://github.com/sreeragvenugopal/new.git
     </head>
     <style>
 #myDIV {
@@ -40,6 +77,7 @@
 	}
 </style>
     <body>
+    <h1><div id="myDIV" >Filed's Can't be Empty</div></h1>
     <% 
       List<ClassModel> classModelList = (ArrayList<ClassModel>)request.getAttribute("classList");
     
@@ -52,23 +90,31 @@
         <fieldset>
           <legend><span class="number">1</span>Add New Teacher</legend>
            <label for="name">User-Name:</label>
+<<<<<<< HEAD
           <input type="text" id="uname" name="username">
+=======
+          <input type="text" id="uname" name="username" required>
+>>>>>>> branch 'master' of https://github.com/sreeragvenugopal/new.git
           
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name">
+          <input type="text" id="name" name="name" required>
           
           <label for="password">Password:</label>
-          <input type="password" id="password" name="pass">
+          <input type="password" id="password" name="pass" required>
           
           <label for="password">Re-Enter Password:</label>
-          <input type="password" id="repassword" name="repass">
+          <input type="password" id="repassword" name="repass" required>
           
         </fieldset>
         
         
         <fieldset>
         <label for="job">Branch</label>
+<<<<<<< HEAD
         <select id="branch" name="branch">
+=======
+        <select  id="branch" name="branch" required>
+>>>>>>> branch 'master' of https://github.com/sreeragvenugopal/new.git
           <optgroup label="">
             <option value="Computer science">Computer science</option>
             <option value="Maths">Maths</option>
@@ -80,7 +126,11 @@
         
         <fieldset>
         <label for="job">Subject</label>
+<<<<<<< HEAD
         <select id="subject" name="subject">
+=======
+        <select id="subject" name="subject" required>
+>>>>>>> branch 'master' of https://github.com/sreeragvenugopal/new.git
           <optgroup label="">
             <option value="Networking">Networking</option>
             <option value="Cryptography">Cryptography</option>
@@ -91,7 +141,7 @@
         </fieldset>
         
         <fieldset>
-        <label for="job">Type</label>
+        <label for="type">Type</label>
           <input type="radio" id="" value="Coordinator" name="iscoordinator"><label class="light" for="">Co-ordinator</label>&nbsp&nbsp&nbsp
           <input type="radio" id="" value="Teacher" name="iscoordinator"><label class="light" for="">Teacher</label>
         </fieldset>
@@ -106,11 +156,15 @@
     	</select>
         </fieldset>
         
-        <button type="submit" >Create Teacher</button>
+        <button type="submit" onclick="validate()">Create Teacher</button>
          <button type="submit">Reset</button>
         
       </form>
+<<<<<<< HEAD
       <h1><div id="myDIV">Fileds Must Be Filled</div></h1>
+=======
+      
+>>>>>>> branch 'master' of https://github.com/sreeragvenugopal/new.git
       
     </body>
 </html>

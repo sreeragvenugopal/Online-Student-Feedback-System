@@ -65,12 +65,31 @@ public class CreateTeacherServlet extends HttpServlet {
 		String branch=request.getParameter("branch");
 		String subject=request.getParameter("subject");
 		String type=request.getParameter("iscoordinator");
+<<<<<<< HEAD
 
 	 if( type != null && type.equals("Coordinator"))
 			{
 				  isCoordinator=true;
 				  
+=======
+		if( type != null && type.equals("Coordinator"))
+				{
+					  isCoordinator=true;
+				}
+		
+		String batch=request.getParameter("model");
+		
+		/*if(username.equals("") || name.equals("") || password.equals("") ||  repassword.equals("")||  branch.equals("") || subject.equals("")  )
+		{
+				
+			request.setAttribute("formfillerror", "Fields Cannot be empty");
+			try {
+				request.getRequestDispatcher("/Login/Addnewteacher.jsp").forward(request, response);
+			} catch (ServletException e) {
+				System.out.println(e.getMessage());
+>>>>>>> branch 'master' of https://github.com/sreeragvenugopal/new.git
 			}
+<<<<<<< HEAD
 
 	String batch=request.getParameter("model");
 
@@ -85,6 +104,9 @@ public class CreateTeacherServlet extends HttpServlet {
 		}
 	} */
 	 	  
+=======
+		} */
+>>>>>>> branch 'master' of https://github.com/sreeragvenugopal/new.git
 		
 		
 		try {
