@@ -13,12 +13,38 @@
         <link rel="stylesheet" href="../css/normalize.css">
         <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="../css/main2.css">
+        <script type="text/javascript">
+        
+        var username=document.getElementById("uname");
+        var name=document.getElementById("name");
+        var pass=document.getElementById("password");
+        var repass=document.getElementById("repassword");
+        var branch=document.getElementById("branch");
+        var subject=document.getElementById("subject");
+        var batch=document.getElementById("batch");
+        
+        if(username=="" || name=="" ||pass=="" ||repass=="" ||branch=="" ||subject=="" ||batch=="" )
+        	{
+        	 var x = document.getElementById("myDIV");
+        	 x.style.display = "none";
+        	}
+        </script>
     </head>
+    <style>
+#myDIV {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    margin-top: 20px;
+    display:block;
+	}
+</style>
     <body>
     <% 
       List<ClassModel> classModelList = (ArrayList<ClassModel>)request.getAttribute("classList");
     
  	  %>
+ 
       <form name="addnewteacher" action="addnewteacher" method="post">
       
         <h1>Add Teacher</h1>
@@ -26,7 +52,7 @@
         <fieldset>
           <legend><span class="number">1</span>Add New Teacher</legend>
            <label for="name">User-Name:</label>
-          <input type="text" id="name" name="username">
+          <input type="text" id="uname" name="username">
           
           <label for="name">Name:</label>
           <input type="text" id="name" name="name">
@@ -42,7 +68,7 @@
         
         <fieldset>
         <label for="job">Branch</label>
-        <select id="job" name="branch">
+        <select id="branch" name="branch">
           <optgroup label="">
             <option value="Computer science">Computer science</option>
             <option value="Maths">Maths</option>
@@ -54,7 +80,7 @@
         
         <fieldset>
         <label for="job">Subject</label>
-        <select id="job" name="subject">
+        <select id="subject" name="subject">
           <optgroup label="">
             <option value="Networking">Networking</option>
             <option value="Cryptography">Cryptography</option>
@@ -84,7 +110,7 @@
          <button type="submit">Reset</button>
         
       </form>
-      <h1><div id="ff" >LLLLLLLLLLLLLL</div></h1>
+      <h1><div id="myDIV">Fileds Must Be Filled</div></h1>
       
     </body>
 </html>

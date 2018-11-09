@@ -21,7 +21,7 @@ public class AdminServlet extends HttpServlet{
 		String pass = request.getParameter("pass");
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");  
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback","root","");
 			PreparedStatement st = con.prepareStatement("select * from feedback.admin where userName=? and password=?");
 			st.setString(1, user);
 			st.setString(2, pass);

@@ -27,7 +27,7 @@ public class CreateTeacherServlet extends HttpServlet {
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback", "root", "root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback", "root", "");
 			PreparedStatement st = con.prepareStatement("select * from class");
 
 			ResultSet rs = st.executeQuery();
@@ -65,30 +65,33 @@ public class CreateTeacherServlet extends HttpServlet {
 		String branch=request.getParameter("branch");
 		String subject=request.getParameter("subject");
 		String type=request.getParameter("iscoordinator");
-		if( type != null && type.equals("Coordinator"))
-				{
-					  isCoordinator=true;
-				}
-		
-		String batch=request.getParameter("model");
-		
-		if(username.equals("") || name.equals("") || password.equals("") ||  repassword.equals("")||  branch.equals("") || subject.equals("")  )
-		{
-				
-			request.setAttribute("formfillerror", "Fields Cannot be empty");
-			try {
-				request.getRequestDispatcher("/Login/Addnewteacher.jsp").forward(request, response);
-			} catch (ServletException e) {
-				System.out.println(e.getMessage());
+
+	 if( type != null && type.equals("Coordinator"))
+			{
+				  isCoordinator=true;
+				  
 			}
-		} 
+
+	String batch=request.getParameter("model");
+
+ 	/*if(username.equals("") || name.equals("") || password.equals("") ||  repassword.equals("")||  branch.equals("") || subject.equals("")  )
+	{
+			
+		request.setAttribute("formfillerror", "Fields Cannot be empty");
+		try {
+			request.getRequestDispatcher("/Login/Addnewteacher.jsp").forward(request, response);
+		} catch (ServletException e) {
+			System.out.println(e.getMessage());
+		}
+	} */
+	 	  
 		
 		
 		try {
 			
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback","root","");
 			PreparedStatement st = con.prepareStatement("INSERT INTO teacher "
 					+ "( userName, password, name, subject, classid, adminid, isCoordinator) "
 					+ "VALUES ( ?, ?, ?, ?, ?, ?, ?)");
