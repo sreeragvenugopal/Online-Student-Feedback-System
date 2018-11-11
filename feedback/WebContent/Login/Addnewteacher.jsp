@@ -14,7 +14,7 @@
         <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="../css/main2.css">
         <script type="text/javascript">
-        function validate(){
+        function validate(addnewteacher){
         var uname=document.getElementById("uname");
         var name=document.getElementById("name");
         var pass=document.getElementById("password");
@@ -24,16 +24,14 @@
         var type=document.getElementById("type");
         var batch=document.getElementById("batch");
         
-        if(username.equals("") || name.equals("") || password.equals("") ||  repassword.equals("")||  branch.equals("") || subject.equals("")  )
-		{
-				
-        	var x = document.getElementById("myDIV");
-        	x.style.display = "block";
-        	return;
-			
-		} 
+       if(pass != repass){
+    	   alert("Your password and confirmation password do not match.");
+    	   //document.getElementById("repassword").focus();
+    	   addnewteacher.repass.focus();
+    	   return false;   
+       }
         
-        
+       
         
         }
         
@@ -47,10 +45,14 @@
     margin-top: 20px;
     display: none;
     }
+  
+}
 </style>
     </head>
     <body>
-    <h1><div id="myDIV" >Filed's Can't be Empty</div></h1>
+   
+    
+
     <% 
       List<ClassModel> classModelList = (ArrayList<ClassModel>)request.getAttribute("classList");
     
@@ -79,7 +81,7 @@
         <fieldset>
         <label for="job">Branch</label>
         <select  id="branch" name="branch" required>
-          <optgroup label="">
+        	<option value=""></option>
             <option value="Computer science">Computer science</option>
             <option value="Maths">Maths</option>
             <option value="English">English</option>
@@ -116,7 +118,7 @@
     	</select>
         </fieldset>
         
-        <button type="submit" onclick="validate()">Create Teacher</button>
+        <button type="submit" onclick="return validate(this);">Create Teacher</button>
          <button type="submit">Reset</button>
         
       </form>

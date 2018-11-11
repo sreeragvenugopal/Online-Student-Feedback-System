@@ -102,7 +102,7 @@ public class CreateTeacherServlet extends HttpServlet {
 			st.executeUpdate();
 			
 			
-			response.sendRedirect("LoginSuccessful.html");
+			//response.sendRedirect("LoginSuccessful.html");
 			return;
 			
 			
