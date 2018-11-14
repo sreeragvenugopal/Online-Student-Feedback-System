@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.feedback.database.DatabaseConnection;
+
 public class AdminServlet extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("vasnnu");
@@ -20,8 +22,7 @@ public class AdminServlet extends HttpServlet{
 		String user=request.getParameter("username");
 		String pass = request.getParameter("pass");
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");  
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback","root","root");
+			Connection con = DatabaseConnection.getInstance();
 			PreparedStatement st = con.prepareStatement("select * from feedback.admin where userName=? and password=?");
 			st.setString(1, user);
 			st.setString(2, pass);

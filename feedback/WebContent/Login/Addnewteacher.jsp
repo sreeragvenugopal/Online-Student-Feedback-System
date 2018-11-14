@@ -15,10 +15,10 @@
         <link rel="stylesheet" href="../css/main2.css">
         <script type="text/javascript">
         function validate(addnewteacher){
-        var uname=document.getElementById("uname");
-        var name=document.getElementById("name");
-        var pass=document.getElementById("password");
-        var repass=document.getElementById("repassword");
+        var uname=document.getElementById("uname").value;
+        var name=document.getElementById("name").value;
+        var pass=document.getElementById("password").value;
+        var repass=document.getElementById("repassword").value;
         var branch=document.getElementById("branch");
         var subject=document.getElementById("subject");
         var type=document.getElementById("type");
@@ -26,7 +26,6 @@
         
        if(pass != repass){
     	   alert("Your password and confirmation password do not match.");
-    	   //document.getElementById("repassword").focus();
     	   addnewteacher.repass.focus();
     	   return false;   
        }

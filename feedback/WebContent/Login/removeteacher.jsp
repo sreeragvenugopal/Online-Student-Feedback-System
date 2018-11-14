@@ -29,6 +29,7 @@ function fun()
      <table border="1" cellpadding="9" style="border-collapse: collapse">
 			   <tbody>
 			                <tr>
+			      <th></th>          
 			     <th>ID</th>
 			     <th>Name</th>
 			     <th>Subject</th>
@@ -38,10 +39,10 @@ function fun()
 <%for(TeacherModel t:TeacherList){%>
 			                <tr>
 			                
-			     <td><input type="checkbox" name="ckbox"  /></td>
+			     <td><input type="checkbox" name="teachers" value="<%=t.getId() %>" /></td>
 			     <td><%= t.getId()%> </td>
 			     <td><%= t.getName()%> </td>
-			     
+			     <td><%= t.getSubject()%> </td>
 			     
 			                </tr>
 			              

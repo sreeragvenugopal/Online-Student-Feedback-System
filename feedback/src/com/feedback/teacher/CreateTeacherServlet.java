@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
 
+import com.feedback.database.DatabaseConnection;
 import com.feedback.model.ClassModel;
 
 public class CreateTeacherServlet extends HttpServlet {
@@ -26,8 +27,7 @@ public class CreateTeacherServlet extends HttpServlet {
 		List<ClassModel> classModelList = new ArrayList<>();
 
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback", "root", "root");
+			Connection con = DatabaseConnection.getInstance();
 			PreparedStatement st = con.prepareStatement("select * from class");
 
 			ResultSet rs = st.executeQuery();
@@ -71,24 +71,12 @@ public class CreateTeacherServlet extends HttpServlet {
 				}
 		
 		String batch=request.getParameter("model");
-		
-		/*if(username.equals("") || name.equals("") || password.equals("") ||  repassword.equals("")||  branch.equals("") || subject.equals("")  )
-		{
-				
-			request.setAttribute("formfillerror", "Fields Cannot be empty");
-			try {
-				request.getRequestDispatcher("/Login/Addnewteacher.jsp").forward(request, response);
-			} catch (ServletException e) {
-				System.out.println(e.getMessage());
-			}
-		} */
-		
+
 		
 		try {
 			
 			
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback","root","root");
+			Connection con = DatabaseConnection.getInstance();
 			PreparedStatement st = con.prepareStatement("INSERT INTO teacher "
 					+ "( userName, password, name, subject, classid, adminid, isCoordinator) "
 					+ "VALUES ( ?, ?, ?, ?, ?, ?, ?)");
@@ -101,9 +89,10 @@ public class CreateTeacherServlet extends HttpServlet {
 			st.setBoolean(7, isCoordinator);			
 			st.executeUpdate();
 			
+			request.setAttribute("successMessage", "Added Teacher Succefully");
+			request.getRequestDispatcher("/AdminHome.html").forward(request, response);
+
 			
-			//response.sendRedirect("LoginSuccessful.html");
-			return;
 			
 			
 			
