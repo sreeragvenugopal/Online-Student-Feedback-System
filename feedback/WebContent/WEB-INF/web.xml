@@ -44,6 +44,16 @@
     <servlet-name>removeteacher</servlet-name>
     <url-pattern>/Login/removeteacher</url-pattern>
   </servlet-mapping>
+   <!-- Teacher Login -->
+  <servlet>
+    <servlet-name>teacherlogin</servlet-name>
+    <servlet-class>com.feedback.login.TeacherServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>teacherlogin</servlet-name>
+    <url-pattern>/Login/teacherlogin</url-pattern>
+  </servlet-mapping>
   
   
   

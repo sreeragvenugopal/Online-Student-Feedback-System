@@ -14,11 +14,11 @@ import com.feedback.database.DatabaseConnection;
 
 public class AdminServlet extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("vasnnu");
+		//System.out.println("vasnnu");
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) {
-		System.out.println(request.getParameter("username"));
+		//System.out.println(request.getParameter("username"));
 		String user=request.getParameter("username");
 		String pass = request.getParameter("pass");
 		try {
