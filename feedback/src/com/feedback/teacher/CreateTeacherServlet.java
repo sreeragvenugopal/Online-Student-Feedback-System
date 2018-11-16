@@ -65,13 +65,12 @@ public class CreateTeacherServlet extends HttpServlet {
 		String branch=request.getParameter("branch");
 		String subject=request.getParameter("subject");
 		String type=request.getParameter("iscoordinator");
-<<<<<<< HEAD
+
 
 	 if( type != null && type.equals("Coordinator"))
 			{
 				  isCoordinator=true;
-				  
-=======
+				 
 		if( type != null && type.equals("Coordinator"))
 				{
 					  isCoordinator=true;
@@ -104,9 +103,7 @@ public class CreateTeacherServlet extends HttpServlet {
 		}
 	} */
 	 	  
-=======
-		} */
->>>>>>> branch 'master' of https://github.com/sreeragvenugopal/new.git
+ //https://github.com/sreeragvenugopal/new.git
 		
 		
 		try {
@@ -146,4 +143,5 @@ public class CreateTeacherServlet extends HttpServlet {
 	}
 
 	
+	}
 }

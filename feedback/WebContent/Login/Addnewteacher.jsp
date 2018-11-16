@@ -14,7 +14,7 @@
         <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="../css/main2.css">
         <script type="text/javascript">
-<<<<<<< HEAD
+
         
         var username=document.getElementById("uname");
         var name=document.getElementById("name");
@@ -30,7 +30,7 @@
         	 x.style.display = "none";
         	}
         </script>
-=======
+
         function validate(){
         var uname=document.getElementById("uname");
         var name=document.getElementById("name");
@@ -65,7 +65,7 @@
     display: none;
     }
 </style>
->>>>>>> branch 'master' of https://github.com/sreeragvenugopal/new.git
+
     </head>
     <style>
 #myDIV {
@@ -90,11 +90,9 @@
         <fieldset>
           <legend><span class="number">1</span>Add New Teacher</legend>
            <label for="name">User-Name:</label>
-<<<<<<< HEAD
+
           <input type="text" id="uname" name="username">
-=======
           <input type="text" id="uname" name="username" required>
->>>>>>> branch 'master' of https://github.com/sreeragvenugopal/new.git
           
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required>
@@ -110,11 +108,8 @@
         
         <fieldset>
         <label for="job">Branch</label>
-<<<<<<< HEAD
         <select id="branch" name="branch">
-=======
         <select  id="branch" name="branch" required>
->>>>>>> branch 'master' of https://github.com/sreeragvenugopal/new.git
           <optgroup label="">
             <option value="Computer science">Computer science</option>
             <option value="Maths">Maths</option>
@@ -126,12 +121,8 @@
         
         <fieldset>
         <label for="job">Subject</label>
-<<<<<<< HEAD
         <select id="subject" name="subject">
-=======
-        <select id="subject" name="subject" required>
->>>>>>> branch 'master' of https://github.com/sreeragvenugopal/new.git
-          <optgroup label="">
+        <select id="subject" name="subject" required><optgroup label="">
             <option value="Networking">Networking</option>
             <option value="Cryptography">Cryptography</option>
             <option value="Introduction To Media">Introduction To Media</option>
@@ -160,11 +151,5 @@
          <button type="submit">Reset</button>
         
       </form>
-<<<<<<< HEAD
-      <h1><div id="myDIV">Fileds Must Be Filled</div></h1>
-=======
-      
->>>>>>> branch 'master' of https://github.com/sreeragvenugopal/new.git
-      
-    </body>
+      <h1><div id="myDIV">Fileds Must Be Filled</div></h1></body>
 </html>
