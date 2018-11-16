@@ -55,6 +55,19 @@
     <url-pattern>/Login/teacherlogin</url-pattern>
   </servlet-mapping>
   
+   <!--Add New Student -->
+  <servlet>
+    <servlet-name>addnewstudent</servlet-name>
+    <servlet-class>com.feedback.CreateStudent.CreateStudent</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>addnewstudent</servlet-name>
+    <url-pattern>/Login/addnewstudent</url-pattern>
+  </servlet-mapping>
+  
+  
+  
   
   
   <welcome-file-list>
