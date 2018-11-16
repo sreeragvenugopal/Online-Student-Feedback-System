@@ -65,6 +65,16 @@
     <servlet-name>addnewstudent</servlet-name>
     <url-pattern>/Login/addnewstudent</url-pattern>
   </servlet-mapping>
+  <!--Coordinator password change -->
+  <servlet>
+    <servlet-name>changepass</servlet-name>
+    <servlet-class>com.feedback.changepassword.ChangePassword</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>changepass</servlet-name>
+    <url-pattern>/Login/changepassword</url-pattern>
+  </servlet-mapping>
   
   
   

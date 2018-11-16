@@ -31,9 +31,12 @@
 </head>
 <body>
 
-	<%
-		List<ClassModel> classModelList = (ArrayList<ClassModel>) request.getAttribute("classList");
-	%>
+    <% 
+      //List<ClassModel> classModelList = //(ArrayList<ClassModel>)request.getAttribute("classList");
+    //HttpSession sessions =request.getSession();
+    //session.setAttribute("name", );
+    
+ 	  %>
 	<form name="addnewstudent" action="addnewstudent" method="post">
 
 		<h1>Add Teacher</h1>
@@ -67,7 +70,9 @@
 				<option value="Visual Media">Visual Media</option>
 			</select>
 		</fieldset>
-
+		
+		
+		
 
 
 

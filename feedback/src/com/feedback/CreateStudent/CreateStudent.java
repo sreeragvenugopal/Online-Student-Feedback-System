@@ -17,7 +17,7 @@ import com.mysql.cj.Session;
 
 public class CreateStudent extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) {
-		/*List<ClassModel> classModelList = new ArrayList<>();
+		List<ClassModel> classModelList = new ArrayList<>();
 
 		try {
 			Connection con = DatabaseConnection.getInstance();
@@ -45,7 +45,7 @@ public class CreateStudent extends HttpServlet {
 			request.getRequestDispatcher("/Login/Addnewstudent.jsp").forward(request, response);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}*/
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
