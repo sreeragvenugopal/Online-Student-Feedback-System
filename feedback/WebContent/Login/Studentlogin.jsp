@@ -39,20 +39,8 @@ function fun3()
 		alert("First Roll No must be filled");
 		return false;
 	}
-	else if(roll.length != 4)
-	{	
-			alert("Roll No must be of 4 digit");
-			document.studentlogin.rollnum.value="";
-			document.studentlogin.rollnum.focus();
-			return false;
-	}
-	else if(roll.charAt(0) < "1" || roll.charAt(0) > "4")
-	{
-			alert("Roll No is wrong");
-			document.studentlogin.rollnum.value="";
-			document.studentlogin.rollnum.focus();
-			return false;
-	}
+	
+	
 	else if(pass=="")
 	{
 		alert("First Password must be filled");
@@ -69,7 +57,7 @@ function fun3()
 				<span class="login100-form-title p-b-41">
 					Students Login
 				</span>
-				<form name="studentlogin" action="studentlogin.jsp?t=1" onsubmit="return fun3()" method="post" class="login100-form validate-form p-b-33 p-t-5">
+				<form name="studentlogin" action="studentlogin" onsubmit="return fun3()" method="post" class="login100-form validate-form p-b-33 p-t-5">
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter Roll Number">
 						<input class="input100" type="text" name="rollnum" placeholder="ROLL Number" required>

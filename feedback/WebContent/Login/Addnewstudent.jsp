@@ -6,12 +6,13 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FeedBack</title>
-        <link rel="stylesheet" href="../css/normalize.css">
-        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="../css/main2.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FeedBack</title>
+<link rel="stylesheet" href="../css/normalize.css">
+<link href='https://fonts.googleapis.com/css?family=Nunito:400,300'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../css/main2.css">
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <script type="text/javascript">
@@ -31,13 +32,13 @@
 </head>
 <body>
 
-    <% 
-      //List<ClassModel> classModelList = //(ArrayList<ClassModel>)request.getAttribute("classList");
-    //HttpSession sessions =request.getSession();
-    //session.setAttribute("name", );
-    
- 	  %>
+	<%
+		List<ClassModel> classModelList = (ArrayList<ClassModel>)request.getAttribute("classList");
+		
+	%>
 	<form name="addnewstudent" action="addnewstudent" method="post">
+
+
 
 		<h1>Add Teacher</h1>
 
@@ -70,9 +71,17 @@
 				<option value="Visual Media">Visual Media</option>
 			</select>
 		</fieldset>
-		
-		
-		
+
+ <fieldset>
+        <label for="batch">Batch</label>
+  		<select id="batch" name="model">
+        <%for(ClassModel c :classModelList){ %>
+            <option value="<%=c.getId()%>"><%=c.getName()%></option>
+        <%} %>
+        
+    	</select>
+        </fieldset>
+
 
 
 
@@ -81,5 +90,7 @@
 		<button type="submit">Reset</button>
 
 	</form>
+	<h1><center><%=request.getAttribute("successMessage")==null?"":request.getAttribute("successMessage")%></center></h1>
+	
 </body>
 </html>

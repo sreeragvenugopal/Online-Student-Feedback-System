@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.feedback.database.DatabaseConnection;
 
@@ -22,6 +23,7 @@ public class TeacherServlet extends HttpServlet {
 
 		String user = request.getParameter("username");
 		String pass = request.getParameter("pass");
+		int id = 0;
 
 		try {
 			Connection con = DatabaseConnection.getInstance();
@@ -30,32 +32,24 @@ public class TeacherServlet extends HttpServlet {
 			st.setString(1, user);
 			st.setString(2, pass);
 			ResultSet rs = st.executeQuery();
-			
-			if(rs.next()) {
-			Byte b = rs.getByte("isCoordinator");
-			if (b == 1) {
-				request.getRequestDispatcher("/Login/coordinatorhome.jsp").forward(request, response);
-			} else {
-				request.getRequestDispatcher("/Login/teacherhome.jsp").forward(request, response);
-			}
-			}
 
-			/*
-			 * if(rs.next()) {
-			 * 
-			 * request.getRequestDispatcher("/AdminHome.html").forward(request, response); }
-			 * else {
-			 * 
-			 * request.setAttribute("errorMessage", "Username or Password is wrong");
-			 * request.getRequestDispatcher("Adminlogin.jsp").forward(request, response);
-			 * 
-			 * }
-			 */
+			if (rs.next()) {
+				id = rs.getInt("id");
+				HttpSession session = request.getSession();
+				session.setAttribute("id", id);
+
+				Byte b = rs.getByte("isCoordinator");
+				if (b == 1) {
+					request.getRequestDispatcher("/Login/coordinatorhome.jsp").forward(request, response);
+				} else {
+					request.getRequestDispatcher("/Login/teacherhome.jsp").forward(request, response);
+				}
+			}
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		// select * from admin where userName=? and password=?;
+
 	}
 
 }

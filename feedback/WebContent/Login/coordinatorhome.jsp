@@ -18,11 +18,11 @@
 				<h1>Co-ordinator Home</h1>
 			</div>
 			<div class="w3-padding-64">
-				<a href="Addnewstudent.jsp"
+				<a href="addnewstudent"
 					class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Add Students
 					</a> <a href=""
 					class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Generate
-					Report</a> <a href="changecoordinatorpassword.jsp"
+					Report</a> <a href="changeteacherpassword.jsp"
 					class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">Change
 					Password</a>
 			</div>

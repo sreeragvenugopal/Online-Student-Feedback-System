@@ -10,6 +10,7 @@ import java.util.List;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.feedback.database.DatabaseConnection;
 import com.feedback.model.ClassModel;
@@ -50,31 +51,33 @@ public class CreateStudent extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		
-		
 		String username = request.getParameter("username").toString();
 		String name = request.getParameter("name");
 		String password = request.getParameter("pass");
 		String repassword = request.getParameter("repass");
 		String branch = request.getParameter("branch");
-		String batch = request.getParameter("model");
+		String model = request.getParameter("model");
 		String regnum = request.getParameter("registernumber");
+		
 
 		try {
 
 			Connection con = DatabaseConnection.getInstance();
-			PreparedStatement st = con.prepareStatement(
-					"INSERT INTO student " + "( userName, password, rollNo, name, classid, coordinatorid) "
-							+ "VALUES ( ?, ?, ?, ?, ?, ?)");
+
+			HttpSession session = request.getSession();
+			int id=(int) session.getAttribute("id");
+
+			PreparedStatement st = con.prepareStatement("INSERT INTO student "
+					+ "( userName, password, rollNo, name, classid, coordinatorid) " + "VALUES ( ?, ?, ?, ?, ?, ?)");
 			st.setString(1, username);
 			st.setString(2, password);
 			st.setString(3, regnum);
 			st.setString(4, name);
-			st.setString(5, batch);
-			st.setInt(6, 1);
+			st.setString(5, model);
+			st.setInt(6, id);
 			st.executeUpdate();
 
-			//request.setAttribute("successMessage", "Added Student Succefully");
+			request.setAttribute("successMessage", "Added Student Succefully");
 			request.getRequestDispatcher("/Login/coordinatorhome.jsp").forward(request, response);
 
 		} catch (Exception e) {
