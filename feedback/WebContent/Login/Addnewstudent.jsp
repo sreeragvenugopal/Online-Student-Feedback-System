@@ -62,7 +62,7 @@
 		<fieldset>
 			<label for="job">Branch</label> <select id="branch" name="branch"
 				required>
-				<option value=""></option>
+				<option value="">-select-</option>
 				<option value="Computer science">Computer science</option>
 				<option value="Maths">Maths</option>
 				<option value="English">English</option>

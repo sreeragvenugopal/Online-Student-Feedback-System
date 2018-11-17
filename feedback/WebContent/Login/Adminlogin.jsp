@@ -71,7 +71,7 @@ function check()
 					</div>
 
 				</form>
-				<h1><%=request.getAttribute("errorMessage")==null?"":request.getAttribute("errorMessage")%></h1>
+				
 			</div>
 		</div>
 	</div>
@@ -95,6 +95,6 @@ function check()
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-
+<h1><%=request.getAttribute("errorMessage")==null?"":request.getAttribute("errorMessage")%></h1>
 </body>
 </html>

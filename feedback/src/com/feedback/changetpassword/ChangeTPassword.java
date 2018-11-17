@@ -1,7 +1,6 @@
-package com.feedback.changepassword;
+package com.feedback.changetpassword;
 
 import java.io.IOException;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,14 +8,10 @@ import java.sql.ResultSet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
-
-import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
 
 import com.feedback.database.DatabaseConnection;
-import javax.swing.JOptionPane;
 
-public class ChangePassword extends HttpServlet {
+public class ChangeTPassword extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) {
 
 	}
@@ -41,16 +36,18 @@ public class ChangePassword extends HttpServlet {
 
 						PreparedStatement st1 = con.prepareStatement(
 								"update teacher set password='" + newpass + "' where userName='" + usrname + "'");
-						st1.executeUpdate();
-						request.setAttribute("infoMessage", "PASSWORD CHANGED");
-						request.getRequestDispatcher("/Login/coordinatorhome.jsp").forward(request, response);
+						 st1.executeUpdate();
+						 request.setAttribute("infoMessage", "PASSWORD CHANGED");
+						request.getRequestDispatcher("/Login/teacherhome.jsp").forward(request, response);
 
 					} else {
-						
+						 //request.setAttribute("infoMessage", "Enter Valid Password");
+						 //request.getRequestDispatcher("/Login/changeteacherpassword.jsp").forward(request, response);
 					}
-				} else {
-					request.setAttribute("infoMessage", "Enter Valid Password");
-					request.getRequestDispatcher("/Login/changecoordinatorpassword.jsp").forward(request, response);
+				}
+				else {
+					 request.setAttribute("infoMessage", "Enter Valid Password");
+					 request.getRequestDispatcher("/Login/changeteacherpassword.jsp").forward(request, response);
 				}
 			}
 
@@ -59,4 +56,5 @@ public class ChangePassword extends HttpServlet {
 		}
 
 	}
+
 }

@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../css/main2.css">
 </head>
 <body>
-<form name="changepass" action="changepass" method="post">
+<form name="changetpass" action="changetpass" method="post">
  <fieldset>
   <label for="password">Current Password:</label>
           <input type="password" id="password" name="currentpass" required>

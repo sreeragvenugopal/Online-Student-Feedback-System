@@ -10,6 +10,8 @@ name=request.getParameter("username");
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css" href="../css/index.css">
 <body class="w3-content" style="max-width:2000px">
+<h1><center><%=request.getAttribute("infoMessage")==null?"":request.getAttribute("infoMessage")%></center></h1>
+
 
 <!-- First Grid: Logo & About -->
 <div class="w3-row">
@@ -18,8 +20,8 @@ name=request.getParameter("username");
       <h1>Teacher Home</h1>
     </div>
     <div class="w3-padding-64">
-      <a href="Login/teacherreport2.jsp?name='"+name+"'" class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Generate Report</a>
-      <a href="Login/changeteacehrpassword.jsp?t=0" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">Change Password</a> 
+      <a href="" class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Generate Report</a>
+      <a href="changeteacherpassword.jsp" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">Change Password</a> 
   </div >
   </div>
   

@@ -73,10 +73,29 @@
 
   <servlet-mapping>
     <servlet-name>changepass</servlet-name>
-    <url-pattern>/Login/changepassword</url-pattern>
+    <url-pattern>/Login/changepass</url-pattern>
+  </servlet-mapping>
+   <!--Teacher password change -->
+  <servlet>
+    <servlet-name>changetpass</servlet-name>
+    <servlet-class>com.feedback.changetpassword.ChangeTPassword</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>changetpass</servlet-name>
+    <url-pattern>/Login/changetpass</url-pattern>
   </servlet-mapping>
   
-  
+  <!--Admin Logout -->
+   <servlet>  
+    
+    <servlet-name>AdminLogout</servlet-name>  
+    <servlet-class>com.feedback.adminlogout.AdminLogout</servlet-class>  
+  </servlet>  
+  <servlet-mapping>  
+    <servlet-name>AdminLogout</servlet-name>  
+    <url-pattern>/LogoutServlet</url-pattern>  
+  </servlet-mapping>  
   
   
   
