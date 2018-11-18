@@ -25,6 +25,7 @@ public class AdminServlet extends HttpServlet{
 		String user=request.getParameter("username");
 		String pass = request.getParameter("pass");
 		
+		
 		 if(pass.equals("admin") && user.equals("admin")){  
 		        System.out.println("Welcome, "+user);  
 		        HttpSession session=request.getSession();  
@@ -40,8 +41,9 @@ public class AdminServlet extends HttpServlet{
 
 			if(rs.next()) {
 			
-				request.getRequestDispatcher("/AdminHome.html").forward(request, response);
+				request.getRequestDispatcher("/AdminHome.jsp").forward(request, response);
 			}
+		
 			else {
 				
 				request.setAttribute("errorMessage", "Username or Password is wrong");
@@ -58,6 +60,9 @@ public class AdminServlet extends HttpServlet{
 			System.out.println(e.getMessage());
 		}
 	}
+		 else {
+			 request.getRequestDispatcher("Adminlogin.jsp").forward(request, response);
+		 }
 
 	}
 }

@@ -33,13 +33,19 @@
 <script language="javascript" >
 function fun3()
 {
-	var name=document.teacherlogin.username.value;
+	var roll=document.teacherlogin.username.value;
 	var pass=document.teacherlogin.pass.value;
-	if(name =="" || pass =="")
+	if(roll=="")
 	{
-			alert("Enter the Details First");
-			document.teacherlogin.username.focus();
-			return false;
+		alert("First Roll No must be filled");
+		return false;
+	}
+	
+	
+	else if(pass=="")
+	{
+		alert("First Password must be filled");
+		return false;
 	}
 }
 </script>

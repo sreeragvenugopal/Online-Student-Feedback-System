@@ -3,21 +3,23 @@
 <head>
 	<title>Administrator Login </title>
 	<script language="javascript" >
-function check()
-{
-	var name=document.AdminLogin.username.value;
-	var pass=document.AdminLogin.pass.value;
-	if(name.equals("") || pass.equals(""))
+	function fun3()
 	{
-			window.alert("hello");
-			document.Adminlogin.username.focus();
+		var roll=document.AdminLogin.username.value;
+		var pass=document.AdminLogin.pass.value;
+		if(roll=="")
+		{
+			alert("First Roll No must be filled");
 			return false;
+		}
+		
+		
+		else if(pass=="")
+		{
+			alert("First Password must be filled");
+			return false;
+		}
 	}
-        else if(name.equals("amma") && pass.equals("123"))
-        {
-            
-        }
-}
 </script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,7 +54,7 @@ function check()
 				<span class="login100-form-title p-b-41">
 					Administrator Login
 				</span>
-				<form name="AdminLogin" action="adminLogin" method="post" class="login100-form validate-form p-b-33 p-t-5">
+				<form name="AdminLogin" action="adminLogin" onsubmit=""return fun3()"" method="post" class="login100-form validate-form p-b-33 p-t-5">
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
 						<input class="input100" type="text" name="username" placeholder="User name" required>

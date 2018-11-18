@@ -31,10 +31,9 @@
 </script>
 </head>
 <body>
-
+	<jsp:include page="/Login/header.jsp" />
 	<%
-		List<ClassModel> classModelList = (ArrayList<ClassModel>)request.getAttribute("classList");
-		
+		List<ClassModel> classModelList = (ArrayList<ClassModel>) request.getAttribute("classList");
 	%>
 	<form name="addnewstudent" action="addnewstudent" method="post">
 
@@ -72,15 +71,18 @@
 			</select>
 		</fieldset>
 
- <fieldset>
-        <label for="batch">Batch</label>
-  		<select id="batch" name="model">
-        <%for(ClassModel c :classModelList){ %>
-            <option value="<%=c.getId()%>"><%=c.getName()%></option>
-        <%} %>
-        
-    	</select>
-        </fieldset>
+		<fieldset>
+			<label for="batch">Batch</label> <select id="batch" name="model">
+				<%
+					for (ClassModel c : classModelList) {
+				%>
+				<option value="<%=c.getId()%>"><%=c.getName()%></option>
+				<%
+					}
+				%>
+
+			</select>
+		</fieldset>
 
 
 
@@ -90,7 +92,9 @@
 		<button type="submit">Reset</button>
 
 	</form>
-	<h1><center><%=request.getAttribute("successMessage")==null?"":request.getAttribute("successMessage")%></center></h1>
-	
+	<h1>
+		<center><%=request.getAttribute("successMessage") == null ? "" : request.getAttribute("successMessage")%></center>
+	</h1>
+
 </body>
 </html>

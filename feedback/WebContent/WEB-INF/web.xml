@@ -85,16 +85,37 @@
     <servlet-name>changetpass</servlet-name>
     <url-pattern>/Login/changetpass</url-pattern>
   </servlet-mapping>
+
+   <!--Teacher Generate report -->
+  <servlet>
+    <servlet-name>generateReport</servlet-name>
+    <servlet-class>com.feedback.teacher.GenerateTeacherReportServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>generateReport</servlet-name>
+    <url-pattern>/Login/generateReport</url-pattern>
+  </servlet-mapping>
   
+  <!--Admin Teacher Generate report -->
+  <servlet>
+    <servlet-name>adminteacherreport</servlet-name>
+    <servlet-class>com.feedback.teacher.AdminTeacherReportServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>adminteacherreport</servlet-name>
+    <url-pattern>/Login/adminteacherreport</url-pattern>
+  </servlet-mapping>
   <!--Admin Logout -->
    <servlet>  
     
     <servlet-name>AdminLogout</servlet-name>  
-    <servlet-class>com.feedback.adminlogout.AdminLogout</servlet-class>  
+    <servlet-class> com.feedback.adminlogout.LogoutServlet</servlet-class>  
   </servlet>  
   <servlet-mapping>  
     <servlet-name>AdminLogout</servlet-name>  
-    <url-pattern>/LogoutServlet</url-pattern>  
+    <url-pattern>/Logout</url-pattern>  
   </servlet-mapping>  
   <!-- Student Login  --> 
   <servlet>
@@ -105,6 +126,27 @@
   <servlet-mapping>
     <servlet-name>studentlogin</servlet-name>
     <url-pattern>/Login/studentlogin</url-pattern>
+  </servlet-mapping>
+   <!--student password change -->
+  <servlet>
+    <servlet-name>changespass</servlet-name>
+    <servlet-class>com.feedback.changeSpassword.ChangeSPassword</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>changespass</servlet-name>
+    <url-pattern>/Login/changespass</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Student Feedback -->
+  <servlet>
+    <servlet-name>studentfeedback</servlet-name>
+    <servlet-class>com.feedback.question.QuestionServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>studentfeedback</servlet-name>
+    <url-pattern>/Login/studentfeedback</url-pattern>
   </servlet-mapping>
   
   

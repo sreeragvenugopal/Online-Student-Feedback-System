@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+
 <html>
 <title>Student Feedback</title>
 <meta charset="UTF-8">
@@ -9,31 +10,30 @@
 <link rel="stylesheet" type="text/css" href="../css/index.css">
 <body class="w3-content" style="max-width: 2000px">
 	<jsp:include page="/Login/header.jsp" />
+	
 	<!-- First Grid: Logo & About -->
 	<div class="w3-row">
-		<h1>
-			<center><%=request.getAttribute("infoMessage") == null ? "" : request.getAttribute("infoMessage")%></center>
-		</h1>
 		<div class="w3-half w3-black w3-container w3-center"
 			style="height: 700px">
 			<div class="w3-padding-64">
-				<h1>Co-ordinator Home</h1>
+				<h1>AdminHome</h1>
 			</div>
 			<div class="w3-padding-64">
-				<a href="addnewstudent"
-					class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Add
-					Students </a> <a href="generateReport"
-					class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Generate
-					Report</a> <a href="changeteacherpassword.jsp"
-					class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">Change
-					Password</a>
+				<a href="addnewteacher"
+					class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">ADD
+					NEW TEACHER</a> <a href="removeteacher"
+					class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">REMOVE
+					A TEACHER</a> <a href="adminteacherreport"
+					class="w3-button w3-black w3-block w3-hover-dark-grey w3-padding-16">GENERATE
+					TEACHER REPORT</a> <a href=""
+					class="w3-button w3-black w3-block w3-hover-dark-grey w3-padding-16">BACK
+					TO HOME PAGE</a>
+
 			</div>
+
 		</div>
-
-		<image src="..\images\asas.jpg" width="50%!important" height="700px" />
-
+		<image src="..\images\asas.jpg" width="50%!important" height="700px"/>
 	</div>
-
-
+					
 </body>
 </html>

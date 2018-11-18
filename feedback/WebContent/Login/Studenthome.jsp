@@ -1,24 +1,41 @@
-<%-- 
-    Document   : Studenthome
-    Created on : Oct 5, 2018, 9:42:43 AM
-    Author     : khsci5mca16137
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+	String name;
+	name = request.getParameter("username");
+%>
 <html>
-    <title>Student Home</title>
+<title>Student Feedback</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/index.css">
+<body class="w3-content" style="max-width: 2000px">
+	<jsp:include page="/Login/header.jsp" />
+	<h1>
+		<center><%=request.getAttribute("infoMessage") == null ? "" : request.getAttribute("infoMessage")%></center>
+	</h1>
 
-</head>
 
-<body bgcolor="Green Bay">
-<form>
-<center>
-<img src="logo.png" width="780" height="151" alt="logo">
-<marquee bgcolor="yellow" behavior=alternate direction="right" width="100%">STUDENT HOME PAGE</marquee>
-<br>
-<br><br><br>
-</center>
-</form>
+	<!-- First Grid: Logo & About -->
+	<div class="w3-row">
+		<div class="w3-half w3-black w3-container w3-center"
+			style="height: 700px">
+			<div class="w3-padding-64">
+				<h1>Student Home</h1>
+			</div>
+			<div class="w3-padding-64">
+				<a href="studentfeedback"
+					class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Give
+					FeedBack</a> <a href="changestudentpassword.jsp"
+					class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">Change
+					Password</a>
+			</div>
+		</div>
+
+		<image src="..\images\asas.jpg" width="50%!important" height="700px" />
+
+	</div>
+
+
 </body>
 </html>

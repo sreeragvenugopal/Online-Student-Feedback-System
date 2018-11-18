@@ -45,6 +45,9 @@ public class TeacherServlet extends HttpServlet {
 					request.getRequestDispatcher("/Login/teacherhome.jsp").forward(request, response);
 				}
 			}
+			else {
+				request.getRequestDispatcher("teacherlogin.jsp").forward(request, response);
+			}
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

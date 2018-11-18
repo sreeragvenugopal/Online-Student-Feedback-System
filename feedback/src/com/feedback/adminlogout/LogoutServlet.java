@@ -9,16 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class AdminLogout extends HttpServlet {
+public class LogoutServlet extends HttpServlet {
 	
 	
 	 protected void doGet(HttpServletRequest request, HttpServletResponse response)  
              throws ServletException, IOException {  
-		 request.getRequestDispatcher("/Login/Adminlogin.jsp").include(request, response);		    
+		  request.getRequestDispatcher("/Login/Adminlogin.jsp").include(request, response);		    
 		    HttpSession session=request.getSession();  
             session.invalidate(); 
-            response.sendRedirect(request.getContextPath() + "/Login/Adminlogin.jsp");
-            
-              
+            request.getRequestDispatcher("/index.html").forward(request, response);
 	 }
 }

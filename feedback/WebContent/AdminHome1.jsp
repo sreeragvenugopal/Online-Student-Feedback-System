@@ -7,9 +7,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css" href="../css/index.css">
 <body class="w3-content" style="max-width: 2000px">
-
-
-
+	<jsp:include page="/Login/header.jsp" />
+	
 	<!-- First Grid: Logo & About -->
 	<div class="w3-row">
 		<div class="w3-half w3-black w3-container w3-center"
@@ -22,17 +21,14 @@
 					class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">ADD
 					NEW TEACHER</a> <a href="removeteacher"
 					class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">REMOVE
-					A TEACHER</a> <a href=""
+					A TEACHER</a> <a href="adminteacherreport"
 					class="w3-button w3-black w3-block w3-hover-dark-grey w3-padding-16">GENERATE
-					TEACHER REPORT</a> <a href=""
-					class="w3-button w3-black w3-block w3-hover-dark-grey w3-padding-16">GENERATE
-					ALL TEACHER REPORT</a> <a href="AdminLogout"
-					class="w3-button w3-black w3-block w3-hover-dark-grey w3-padding-16">BACK
-					TO HOME PAGE</a>
+					TEACHER REPORT</a> 
 
 			</div>
 
 		</div>
+		<image src="..\images\asas.jpg" width="650px" height="700px"/>
 	</div>
 					
 </body>
