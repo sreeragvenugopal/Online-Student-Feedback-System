@@ -90,7 +90,7 @@ public class CreateTeacherServlet extends HttpServlet {
 			st.executeUpdate();
 			
 			request.setAttribute("successMessage", "Added Teacher Succefully");
-			request.getRequestDispatcher("/AdminHome.html").forward(request, response);
+			request.getRequestDispatcher("/AdminHome.jsp").forward(request, response);
 
 			
 			
