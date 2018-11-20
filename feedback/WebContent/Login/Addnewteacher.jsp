@@ -118,7 +118,7 @@
 
 		<button type="submit" onclick="return validate(this);">Create
 			Teacher</button>
-		<button type="submit">Reset</button>
+		<button type="reset">Reset</button>
 
 	</form>
 

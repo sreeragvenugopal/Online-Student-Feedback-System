@@ -58,14 +58,13 @@ public class CreateStudent extends HttpServlet {
 		String branch = request.getParameter("branch");
 		String model = request.getParameter("model");
 		String regnum = request.getParameter("registernumber");
-		
 
 		try {
 
 			Connection con = DatabaseConnection.getInstance();
 
 			HttpSession session = request.getSession();
-			int id=(int) session.getAttribute("id");
+			int id = (int) session.getAttribute("id");
 
 			PreparedStatement st = con.prepareStatement("INSERT INTO student "
 					+ "( userName, password, rollNo, name, classid, coordinatorid) " + "VALUES ( ?, ?, ?, ?, ?, ?)");

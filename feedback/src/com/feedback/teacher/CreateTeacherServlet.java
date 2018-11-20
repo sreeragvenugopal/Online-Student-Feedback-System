@@ -78,8 +78,8 @@ public class CreateTeacherServlet extends HttpServlet {
 			
 			Connection con = DatabaseConnection.getInstance();
 			PreparedStatement st = con.prepareStatement("INSERT INTO teacher "
-					+ "( userName, password, name, subject, classid, adminid, isCoordinator) "
-					+ "VALUES ( ?, ?, ?, ?, ?, ?, ?)");
+					+ "( userName, password, name, subject, classid, adminid, isCoordinator,isdeleted) "
+					+ "VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)");
 			st.setString(1, username);
 			st.setString(2, password);
 			st.setString(3, name);
@@ -87,6 +87,7 @@ public class CreateTeacherServlet extends HttpServlet {
 			st.setString(5, batch);
 			st.setInt(6, 1);
 			st.setBoolean(7, isCoordinator);			
+			st.setBoolean(8, false);			
 			st.executeUpdate();
 			
 			request.setAttribute("successMessage", "Added Teacher Succefully");

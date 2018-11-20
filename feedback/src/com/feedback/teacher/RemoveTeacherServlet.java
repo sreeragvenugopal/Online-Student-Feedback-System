@@ -47,7 +47,7 @@ public class RemoveTeacherServlet extends HttpServlet {
 		try {
 
 			Connection con = DatabaseConnection.getInstance();
-			PreparedStatement st = con.prepareStatement("SELECT * FROM teacher ORDER BY id");
+			PreparedStatement st = con.prepareStatement("SELECT * FROM teacher where isdeleted=false ORDER BY id");
 
 			ResultSet rs = st.executeQuery();
 
@@ -89,11 +89,11 @@ public class RemoveTeacherServlet extends HttpServlet {
 		try {
 
 			Connection con = DatabaseConnection.getInstance();
-			PreparedStatement st = con.prepareStatement("DELETE FROM teacher  WHERE id in ("+ids+")");
+			PreparedStatement st = con.prepareStatement("update teacher set isdeleted=true WHERE id in ("+ids+")");
 
 			st.executeUpdate();
 			
-			st = con.prepareStatement("SELECT * FROM teacher ORDER BY id");
+			st = con.prepareStatement("SELECT * FROM teacher where isdeleted=false ORDER BY id");
 
 			ResultSet rs = st.executeQuery();
 

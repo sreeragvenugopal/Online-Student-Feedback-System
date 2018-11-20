@@ -19,9 +19,7 @@ import com.feedback.database.DatabaseConnection;
 import javax.swing.JOptionPane;
 
 public class ChangePassword extends HttpServlet {
-	public void doGet(HttpServletRequest request, HttpServletResponse response) {
 
-	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession session=request.getSession();

@@ -39,7 +39,7 @@
 
 
 
-		<h1>Add Teacher</h1>
+		<h1>Add Student</h1>
 
 		<fieldset>
 			<legend>
@@ -89,7 +89,7 @@
 
 		<button type="submit" onclick="return validate(this);">Create
 			Student</button>
-		<button type="submit">Reset</button>
+		<button type="reset">Reset</button>
 
 	</form>
 	<h1>

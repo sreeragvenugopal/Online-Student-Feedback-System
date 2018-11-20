@@ -31,6 +31,7 @@
 			</legend>
 			<select id="branch" name="dept">
 				<optgroup label="">
+				<option value="cs">-select-</option>
 					<option value="cs">Computer science</option>
 					<option value="mths">Maths</option>
 					<option value="eng">English</option>
@@ -64,6 +65,7 @@
 			</legend>
 			<select id="yr" name="year">
 				<optgroup label="">
+				<option value="">-select-</option>
 					<option value="">First Year</option>
 					<option value="">Second Year</option>
 					<option value="">Third Year</option>
@@ -77,6 +79,7 @@
 			</legend>
 			<select id="sem" name="semester">
 				<optgroup label="">
+				<option value="">-select-</option>
 					<option value="">1</option>
 					<option value="">2</option>
 					<option value="">3</option>
@@ -95,6 +98,7 @@
 			</legend>
 			<select id="sub" name="subject">
 				<optgroup label="">
+				<option value="">-select-</option>
 					<option value="">Networking</option>
 					<option value="">Cryptography</option>
 					<option value="">Introduction To Media</option>

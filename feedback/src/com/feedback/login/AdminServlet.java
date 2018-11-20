@@ -17,7 +17,18 @@ import com.feedback.database.DatabaseConnection;
 
 public class AdminServlet extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) {
-		
+		try {
+			HttpSession session = request.getSession();
+			Integer id = (Integer) session.getAttribute("id");
+			if (id == null) {
+				request.getRequestDispatcher("/Login/Adminlogin.jsp").forward(request, response);
+			} else {
+					request.getRequestDispatcher("/AdminHome.jsp").forward(request, response);
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,7 +41,8 @@ public class AdminServlet extends HttpServlet{
 		        System.out.println("Welcome, "+user);  
 		        HttpSession session=request.getSession();  
 		        session.setAttribute("name",user);  
-		
+		        session.setAttribute("id", 1);
+
 		try {
 			Connection con = DatabaseConnection.getInstance();
 			PreparedStatement st = con.prepareStatement("select * from feedback.admin where userName=? and password=?");

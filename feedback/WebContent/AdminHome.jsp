@@ -25,10 +25,7 @@
 					class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">REMOVE
 					A TEACHER</a> <a href="adminteacherreport"
 					class="w3-button w3-black w3-block w3-hover-dark-grey w3-padding-16">GENERATE
-					TEACHER REPORT</a> <a href=""
-					class="w3-button w3-black w3-block w3-hover-dark-grey w3-padding-16">BACK
-					TO HOME PAGE</a>
-
+					TEACHER REPORT</a> 
 			</div>
 
 		</div>

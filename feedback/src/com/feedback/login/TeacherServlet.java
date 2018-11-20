@@ -16,7 +16,23 @@ import com.feedback.database.DatabaseConnection;
 
 public class TeacherServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			HttpSession session = request.getSession();
+			Integer id = (Integer) session.getAttribute("id");
+			if (id == null) {
+				request.getRequestDispatcher("/Login/teacherlogin.jsp").forward(request, response);
+			} else {
+				Byte b = (Byte) session.getAttribute("iscoordinator");
+				if (b == 1) {
+					request.getRequestDispatcher("/Login/coordinatorhome.jsp").forward(request, response);
+				} else {
+					request.getRequestDispatcher("/Login/teacherhome.jsp").forward(request, response);
+				}
+			}
 
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) {
@@ -37,15 +53,14 @@ public class TeacherServlet extends HttpServlet {
 				id = rs.getInt("id");
 				HttpSession session = request.getSession();
 				session.setAttribute("id", id);
-
 				Byte b = rs.getByte("isCoordinator");
+				session.setAttribute("iscoordinator", b);
 				if (b == 1) {
 					request.getRequestDispatcher("/Login/coordinatorhome.jsp").forward(request, response);
 				} else {
 					request.getRequestDispatcher("/Login/teacherhome.jsp").forward(request, response);
 				}
-			}
-			else {
+			} else {
 				request.getRequestDispatcher("teacherlogin.jsp").forward(request, response);
 			}
 

@@ -13,6 +13,18 @@ import com.feedback.database.DatabaseConnection;
 
 public class StudentServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			HttpSession session = request.getSession();
+			Integer id = (Integer) session.getAttribute("id");
+			if (id == null) {
+				request.getRequestDispatcher("/Login/Studentlogin.jsp").forward(request, response);
+			} else {
+					request.getRequestDispatcher("/Login/Studenthome.jsp").forward(request, response);
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 
 	}
 
